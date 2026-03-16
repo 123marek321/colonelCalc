@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="colonelcalc.vcxproj" Id="e4c0f1c3-902b-42d0-8564-0ddd1e0de5cc" />
+</Solution>
