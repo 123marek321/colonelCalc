@@ -184,5 +184,49 @@ void shelled() {
 
 
 void peat() {
+	long peatZL{ 0 }, peatXP{ 250000 };
+	double peatX{ 8 }, peatTP{ 300 }, peatREP{ 500 }, peatTIME{ 48 };
+	//quest data
 
+	//input
+	long inputX{}, inputZL{};
+	cout << "How many peat legs did you buy: ";
+	cin >> inputX;
+	cout << "How much did you pay for 1: ";
+	cin >> inputZL;
+	// start gross rewards
+	cout << "-----------------------------\n";
+	//cout << "You will get the following \n";
+
+
+	long zl = (peatZL / peatX) * inputX;//gross revenue
+	long netzl = zl - (inputX * inputZL);//revenue minus cost of peat legs
+
+	long tp = (peatTP / peatX) * inputX;//trade points
+	int tools = tp / 200;// how many old tools can be bought with trade points
+
+	long total = netzl;
+
+	if (tools > 0) { // if you can, adds revenue from tools to total profits
+		total = (tools * 391027) + netzl;
+	}
+
+	long xp = (peatXP / peatX) * inputX;
+	cout << "Experience: " << xp << '\n';;
+
+	long rep = (peatREP / peatX) * inputX;
+	cout << "Reputation: " << rep << '\n';
+
+	if (tp >= 200) { //if enough for a tool, mention it
+		cout << "Trade points: " << tp << ", which is enough for " << tools << " old tool(s)" << '\n';
+	}
+	else {
+		cout << "Trade points: " << tp << '\n';
+	}
+
+	cout << "Profits: " << netzl << '\n';
+
+	if (tools > 0) { //if enough for a tool, add them to the total profits
+		cout << "Profits + old tools revenue: " << total << '\n';
+	}
 }
