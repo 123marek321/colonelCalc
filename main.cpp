@@ -1,11 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
 //X=quantity, ZL=money XP=experience TP=trade points REP= reputation, Time = quest refresh in hours
-void legs();
-void knees();
-void shelled();
-void peat();
-
+void legs(), peat(), shelled(), knees();
 
 void main()
 {
@@ -33,8 +29,8 @@ void main()
 	else if (selection == 4) {
 		peat();
 	}
+	cin >> selection;
 }
-
 
 void legs() {
 	long legsZL{ 45000 }, legsXP{ 32000 };
@@ -49,8 +45,6 @@ void legs() {
 	cin >> inputZL;
 	// start gross rewards
 	cout << "-----------------------------\n";
-	//cout << "You will get the following \n";
-
 
 	long zl = (legsZL / legsX) * inputX;//gross revenue
 	long netzl = zl - (inputX * inputZL);//revenue minus cost of legs
@@ -98,8 +92,6 @@ void knees() {
 	cin >> inputZL;
 	// start gross rewards
 	cout << "-----------------------------\n";
-	//cout << "You will get the following \n";
-
 
 	long zl = (kneesZL / kneesX) * inputX;//gross revenue
 	long netzl = zl - (inputX * inputZL);//revenue minus cost of knees
@@ -133,7 +125,6 @@ void knees() {
 	}
 }
 
-
 void shelled() {
 	long shelledZL{ 60000 }, shelledXP{ 70000 };
 	double shelledX{ 3 }, shelledTP{ 50 }, shelledREP{ 100 }, shelledTIME{ 8 };
@@ -147,8 +138,6 @@ void shelled() {
 	cin >> inputZL;
 	// start gross rewards
 	cout << "-----------------------------\n";
-	//cout << "You will get the following \n";
-
 
 	long zl = (shelledZL / shelledX) * inputX;//gross revenue
 	long netzl = zl - (inputX * inputZL);//revenue minus cost of shelled paws
@@ -182,7 +171,6 @@ void shelled() {
 	}
 }
 
-
 void peat() {
 	long peatZL{ 0 }, peatXP{ 250000 };
 	double peatX{ 8 }, peatTP{ 300 }, peatREP{ 500 }, peatTIME{ 48 };
@@ -196,8 +184,6 @@ void peat() {
 	cin >> inputZL;
 	// start gross rewards
 	cout << "-----------------------------\n";
-	//cout << "You will get the following \n";
-
 
 	long zl = (peatZL / peatX) * inputX;//gross revenue
 	long netzl = zl - (inputX * inputZL);//revenue minus cost of peat legs
